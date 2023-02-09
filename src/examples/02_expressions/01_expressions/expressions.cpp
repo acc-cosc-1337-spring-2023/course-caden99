@@ -9,8 +9,19 @@ them with the third
 */
 
 
+int operator_precedence_1(int num1, int num2, int num3)
+{
+    auto result = num1 + num2 / num3;
+    return result;
+}
 
+int operator_precedence_2(int num1, int num2, int num3)
+{
+    auto result = (num1 + num2) / num3;
+    return result;
+}
 /*
+
 Function operator_precedence_1 add the first two parameters and multiplies 
 them with the third
 
