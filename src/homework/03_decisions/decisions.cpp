@@ -7,12 +7,12 @@ string get_letter_grade_using_if(int grade)
 {
     string letter_grade;
     
-    if(grade >= 90)
+    if((grade >= 90))
     {
         letter_grade = "A";
     }
 
-    else if(grade >= 80 && grade <= 89)
+    else if((grade >= 80) && (grade <= 89))
     {
         letter_grade = "B";
     }
@@ -31,7 +31,7 @@ string get_letter_grade_using_if(int grade)
     {
         letter_grade = "F";
     }
-    return "";
+    return letter_grade;
 }
 
 string get_letter_grade_using_switch(int grade)
