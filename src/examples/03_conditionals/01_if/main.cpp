@@ -6,6 +6,36 @@ using std::cin;
 
 int main() 
 {
+	auto hours = 0;
+
+	cout<<"Enter hours: ";
+	cin>>hours;
+
+	auto overtime = get_is_over_time(hours);
+
+	if(overtime == true)
+	{
+		cout<<"Qualify for overtime.\n";
+	}
+
+	auto even = false;
+	auto value = 0;
+	cout <<"Enter a number: ";
+	cin>>value;
+
+	even = is_even(value);
+
+	if(even)
+	{
+		cout<<value<<" is even\n";
+	}
+	else
+	{
+		cout<<"is odd";
+	}
+	
+
+
 	//create a bool variable named even
 	//create an int variable named value
 

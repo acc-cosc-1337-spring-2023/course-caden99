@@ -6,6 +6,15 @@ Function convert_int_to_double multiplies years times interest_rate
 @param double interest_rate - interest rate
 @return the product of years times interest rate
 */
+double convert_to_double(int years, double rate){
+
+    return years * rate;
+}
+
+double convert_double_to_int(int years, double rate){
+
+    return years * rate;
+}
 
 /*
 Function convert_double_to_int with a double parameter returns the 

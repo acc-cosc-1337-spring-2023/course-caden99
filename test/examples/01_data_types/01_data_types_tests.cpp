@@ -1,8 +1,10 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
+#include "int.h"
+#include "char.h"
 
-TEST_CASE("Verify Test Configuration", "verification") {
-	REQUIRE(true == true);
+TEST_CASE("Test get char ascii valuefunction", are chars stored as numbers") {
+	REQUIRE(get_char_ascci_value('A'); = 65);
 }
 
 /*test case echo_variable */
