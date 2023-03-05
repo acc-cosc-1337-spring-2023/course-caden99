@@ -1,6 +1,7 @@
 //add include statements
 #include "dna.h"
 #include <iostream>
+using std::string;
 using std::cout; using std::cin;
 //add function(s) code here
 
@@ -65,7 +66,8 @@ void run_menu()
     while(option >= 1 && option <=3);
 }
 
-void handle_menu_option(int num)
+void handle_menu_option(int choice)
+
 { 
     int option = 0;
     int option2= 0;
