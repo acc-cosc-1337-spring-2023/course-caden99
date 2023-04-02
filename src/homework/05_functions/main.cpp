@@ -5,6 +5,7 @@
 #include "func.h"
 int main() 
 {
+	auto num = 5
 	run_menu();
 	return 0;
 }
