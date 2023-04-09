@@ -23,7 +23,7 @@ void mark_board(int position);
 
 const string get_player();
 
-const void display_board();
+//const void display_board();
 
 void set_next_player();
 
@@ -32,6 +32,8 @@ bool check_board_full();
 void clear_board();
 
 string player();
+
+
 
 
 #include <vector>
@@ -46,6 +48,11 @@ public:
     std::string get_player() const;
     void display_board() const;
     string get_winner() const;
+    std::vector<std::string> get_board() const;
+    friend std::ostream& operator<<(std::ostream& out, const TicTacToe& game);
+    friend std::istream& operator>>(std::istream& in, TicTacToe& game);
+
+
 
 private:
     void set_next_player();
