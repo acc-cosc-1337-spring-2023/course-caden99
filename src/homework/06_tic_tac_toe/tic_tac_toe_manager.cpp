@@ -4,17 +4,20 @@
 #include <memory>
 
 
-void TicTacToeManager::save_game(TicTacToe b)
-{
-    games.push_back(b);
-    update_winner_count(b.get_winner());
+void TicTacToeManager::save_game(unique_ptr<TicTacToe> &b)
+{   
+    update_winner_count(b->get_winner());
+    games.push_back(move(b));
+    
 
 }
 std::ostream& operator<<(std::ostream& out, const TicTacToeManager& manager)
 {
-    for (auto game : manager.games )
+    for (auto &game : manager.games)
     {
-        out << game << "\n";
+        out << game.get();
+        std::string w = game->get_winner();
+        out << "\nThe winner is: " << w << "\n";
     }
 
     out << "X wins: " << manager.x_win << "\n";

@@ -1,73 +1,43 @@
-//h
-#ifndef TIC_TAC_TOE_H
-#define TIC_TAC_TOE_H
-
-
 #include <iostream>
 #include <vector>
 #include <string>
+using namespace std;
 
-using std::string; using std::cout;
-using std::vector;
-
-
-
+#ifndef TicTacToe_h
+#define TicTacToe_h
 
 
+class TicTacToe{
 
-bool game_over();
+    public:
+        TicTacToe() = default;
+        TicTacToe(int grid) : string_pegs(grid * grid, " "){};
+        bool game_over();
+        void start_game(string first_player);
+        void mark_board(int position);
+        string get_player() const {return player;}
+        string get_winner() {return winner;};        
+        friend std::ostream& operator<<(ostream& out, const TicTacToe *game); 
+        friend std::istream& operator>>(istream& in, TicTacToe *game);
 
-void start_game(string first_player);
+        
 
-void mark_board(int position);
-
-const string get_player();
-
-//const void display_board();
-
-void set_next_player();
-
-bool check_board_full();
-
-void clear_board();
-
-string player();
-
-
-
-
-#include <vector>
-#include <string>
-
-class TicTacToe
-{
-public:
-    bool game_over();
-    void start_game(std::string first_player);
-    void mark_board(int position);
-    std::string get_player() const;
-    void display_board() const;
-    string get_winner() const;
-    std::vector<std::string> get_board() const;
-    friend std::ostream& operator<<(std::ostream& out, const TicTacToe& game);
-    friend std::istream& operator>>(std::istream& in, TicTacToe& game);
-
-
-
-private:
-    void set_next_player();
-    bool check_board_full();
-    void clear_board();
-    bool check_column_win();
-    bool check_row_win();
-    bool check_diagonal_win();
-    void set_winner();
-    //bool game_over_check();
-
+    private:
     
-    std::string player;
-    std::vector<std::string> pegs {9, " "};
-    string winner;
-};
+        bool check_board_full();
+        void set_next_player();
+        void clear_board();      
+        string player;
+        void set_winner();
+        string winner;
 
+    protected:
+
+        vector<string> string_pegs;
+        virtual bool check_column_win() = 0;
+        virtual bool check_row_win() = 0;
+        virtual bool check_diagonal_win()= 0;        
+
+
+};
 #endif
