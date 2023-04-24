@@ -10,7 +10,13 @@ DNA string and call either get gc content or get dna complement
 function and display the result. Program runs as long as 
 user enters a y or Y.
 */
+#include "dna.h"
+#include <iostream>
+using std::cout; using std::cin;
+
 int main() 
-{
+{	
+	run_menu();
+	
 	return 0;
 }

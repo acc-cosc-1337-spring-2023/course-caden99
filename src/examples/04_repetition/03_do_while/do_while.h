@@ -4,3 +4,5 @@
 
 //Write void function protype named run_menu with no parameters
 
+#include <iostream>
+void prompt_user();

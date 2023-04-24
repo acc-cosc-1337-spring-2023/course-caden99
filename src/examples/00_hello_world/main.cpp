@@ -1,7 +1,10 @@
 #include<iostream>
+using std::cout;
 
-int main()
+//int means we will return a whole number
+int main() 
 {
-    std::cout<<"Hello World!";
+    cout<<"Hello World!";
     return 0;
+    // we returned 0
 }
